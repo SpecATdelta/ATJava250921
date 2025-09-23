@@ -18,8 +18,7 @@ enum UserList {
     visual_user
 }
 
-
-public class SauceTest {
+public class ASauceTest {
     String password = "secret_sauce"; //todo move to .env
     String lockedOutUser = "locked_out_user";
 
@@ -68,5 +67,17 @@ public class SauceTest {
         SelenideElement sU = Selenide.$(id);
         sU.setValue(value);
         sU.shouldHave(value(value));
+    }
+}
+
+class HabrTest {
+    @Test
+    void habr() {
+        Configuration.pageLoadStrategy = "eager";
+        Selenide.open("https://habr.com/ru/articles/");
+        Selenide.$(".tm-header-user-menu__search").click();
+        Selenide.$(".tm-input-text-decorated__input")
+                .setValue("selenide parameterized test").pressEnter();
+        Selenide.sleep(3_000);
     }
 }

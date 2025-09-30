@@ -25,7 +25,7 @@ public class ASauceTest {
     @BeforeAll
     static void beforeAll() {
         Configuration.baseUrl = "https://www.saucedemo.com/";
-        Configuration.browser = "chrome";
+        Configuration.browser = "firefox";
         Configuration.browserSize = "480x1024";
         Configuration.timeout = 3_000;
     }
